@@ -34,7 +34,15 @@
 		<!-- whatever you want goes here -->
 			<ul>
 				<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => '', 'menu_id' => '', 'items_wrap' => '%3$s' ) ); ?>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' 	=> 'primary',
+							'container' 			=> false,
+							// 'walker'					=> new Offcanvas_Walker(),
+						)
+					);
+				?>
 			</ul>
 		</aside>
 
@@ -81,7 +89,13 @@
 
 				<nav id="site-navigation" class="top-bar hide-for-small" data-topbar role="navigation">
 					<section class="top-bar-section">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						<?php wp_nav_menu( array(
+							'theme_location' 	=> 'primary',
+							'container'				=> false,
+							'menu_id' 				=> 'top-nav',
+							// 'walker'					=> new Top_Bar_Walker(),
+							) );
+						?>
 					</section>
 				</nav><!-- #site-navigation -->
 

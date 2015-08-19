@@ -78,6 +78,7 @@ function heisenberg_setup() {
 endif; // heisenberg_setup
 add_action( 'after_setup_theme', 'heisenberg_setup' );
 
+
 /**
  * Register widget area.
  *
@@ -170,6 +171,11 @@ add_action( 'wp_enqueue_scripts', 'heisenberg_scripts' );
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Include custom Walker for top nav and offcanvas compatibility
+ */
+require_once (get_template_directory() . '/inc/custom-walker.php');
 
 /**
  * Custom template tags for this theme.
