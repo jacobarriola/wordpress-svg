@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Heisenberg
+ * @package svgtheme
  */
 ?>
 
@@ -25,10 +25,6 @@
 				</div><!-- .column.row -->
 
 			</footer><!-- #colophon -->
-
-		</div> <!-- .off-canvas-content -->
-	</div><!-- .off-canvas-wrapper-inner -->
-</div><!-- .off-canvas-wrapper -->
 
 <?php wp_footer(); ?>
 </body>

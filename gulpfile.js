@@ -5,6 +5,8 @@ var	gulp			= require('gulp'),
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
 	svgSprite				= require('gulp-svg-sprite'),
+	svgmin 				= require('gulp-svgmin'),
+	del						= require('del'),
 	size					= require('gulp-size'),
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
@@ -26,8 +28,13 @@ var paths = {
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Sprite Task
+// SVG Task
 ////////////////////////////////////////////////////////////////////////////////
+
+// Delete compiled SVGs before creating a new one
+gulp.task('clean:svgs', function () {
+  return del(paths.destPath + 'svg/**/*');
+});
 
 var svgConfig = {
   mode: {
@@ -48,10 +55,17 @@ var svgConfig = {
   }
 };
 
-gulp.task('sprite-page', function() {
+gulp.task('svg', ['clean:svgs'], function() {
   return gulp.src(paths.imgPath + 'svg/**/*.svg')
+		.pipe(svgmin())
+		.pipe(gulp.dest(paths.destPath + 'svg'))
     .pipe(svgSprite(svgConfig))
-    .pipe(gulp.dest(paths.destPath));
+		.pipe(gulp.dest(paths.destPath))
+		.pipe(browserSync.reload({stream:true}))
+		.pipe(notify({
+			message: "✔︎ SVG task complete",
+			onLast: true
+		}))
 });
 
 
@@ -65,7 +79,7 @@ gulp.task('browser-sync', function() {
 	];
 
 	browserSync.init(files, {
-		proxy: 'heisenberg.dev/'
+		proxy: 'wordcamp16.dev/'
 	});
 });
 
@@ -175,10 +189,10 @@ gulp.task('foundation-js', function() {
 gulp.task('watch', function() {
 	gulp.watch(paths.sassPath + '**/*.scss', ['styles']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
-	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['sprite-page']);
+	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg']);
 
 });
 
 
 // Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['styles', 'js', 'browser-sync', 'sprite-page', 'watch']);
+gulp.task('default', ['styles', 'js', 'browser-sync', 'svg', 'watch']);
