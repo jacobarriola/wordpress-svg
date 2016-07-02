@@ -10,21 +10,7 @@
  */
 ?>
 
-			</div><!-- #content -->
-
-			<footer id="colophon" class="site-footer" role="contentinfo">
-
-				<div class="column row">
-
-					<p class="text-center">
-						<svg class="specific-icon icon">
-							<use xlink:href="#fi-graph-pie"></use>
-						</svg>
-						This is the footer</p>
-
-				</div><!-- .column.row -->
-
-			</footer><!-- #colophon -->
+</div><!-- #content -->
 
 <?php wp_footer(); ?>
 </body>

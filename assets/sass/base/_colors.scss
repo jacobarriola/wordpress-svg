@@ -3,22 +3,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 $colors: (
- 'red': (
-   base: #f00,
-   light: #de4b39
+ 'pink': (
+   base: #e72683,
  ),
- 'grey': (
-   dark: #333,
-   base: #999,
-   light: #ececec
+ 'blue': (
+   base: #5cb1cc,
  ),
  'black': (
-   base: #000,
+   base: #1b2433,
    trans: transparentize(#000, .3)
  ),
  'white': (
    base: #fff,
-   trans: transparentize(#fff, .5)
  )
 );
 
@@ -30,4 +26,3 @@ $colors: (
 // a {
 //   color: color('grey', 'dark');
 // }
-

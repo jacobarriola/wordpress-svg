@@ -1,3 +1,5 @@
+$icon-color: #fff;
+
 // Baseline SVG styles
 .icon {
   display: inline-block;
@@ -6,8 +8,43 @@
   fill: currentColor;
 }
 
+
+
 // Get specific here
 .icon-navigation {
-  font-size: 40px;
-  color: hsl(40, 50%, 50%);
+  color: $icon-color;
+  font-size: 20px;
+  margin-right: .5em;
+
+  // Change color on hover
+  &:hover {
+    color: complement($icon-color);
+  }
+}
+
+
+
+// Graph Animation (using full <svg>)
+@keyframes graph-insert {
+  0% {
+    opacity: 0;
+    transform: translateX(-.5em) translateY(.5em);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.icon-graph {
+
+  path {
+    position: relative;
+    fill: color('blue');
+
+    &:first-of-type {
+      animation-name: graph-insert;
+      animation-duration: 2s;
+      fill: color('pink');
+    }
+  }
 }
