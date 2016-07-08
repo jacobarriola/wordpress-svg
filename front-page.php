@@ -7,62 +7,93 @@
  * @package svgtheme
  */
 
-get_header(); ?>
+ get_header(); ?>
 
-<?php get_template_part('components/navigation'); ?>
-
-<h1>Dashboard</h1>
-
-<div class="cards">
-	<div class="card">
-		<div class="graph-container">
-			<?php
-
-			 /*
-			 * Get full SVG file instead of <use>
-			 */
-
-				echo file_get_contents(
-					get_template_directory() . '/assets/dist/svg/icon-graph.svg'
-				);
-
-			?>
-			<div class="graph-roses">
-				75%<br>
-				<span>Mobile</span>
-			</div>
-			<div class="graph-poppies">
-				25%<br>
-				<span>Desktop</span>
-			</div>
-		</div>
-		<h2 class="text-center">Device Breakdown</h2>
-	</div>
-	<div class="card">
-		<div class="graph-container">
-			<?php
-
-			 /*
-			 * Get full SVG file instead of <use>
-			 */
-
-				echo file_get_contents(
-					get_template_directory() . '/assets/dist/svg/icon-graph.svg'
-				);
-
-			?>
-			<div class="graph-roses">
-				75%<br>
-				<span>Roses</span>
-			</div>
-			<div class="graph-poppies">
-				25%<br>
-				<span>Poppies</span>
-			</div>
-		</div>
-		<h2 class="text-center">Total Sales</h2>
-	</div>
-</div>
+ <h1 class="text-center" style="margin-top: 2em; margin-bottom: 1em;">
+   Let's demo some SVGs!
+ </h1>
+ <div class="text-center">
+   <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/meme.jpg">
+ </div>
+ <?php // Social Media via <use> ?>
 
 
-<?php get_footer(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <ul class="social-list">
+   <li>
+     <svg class="icon icon-social">
+       <use xlink:href="#facebook"></use>
+     </svg>
+   </li>
+   <li>
+     <svg class="icon icon-social">
+       <use xlink:href="#twitter"></use>
+     </svg>
+   </li>
+   <li>
+     <svg class="icon icon-social">
+       <use xlink:href="#instagram"></use>
+     </svg>
+   </li>
+ </ul> -->
+
+
+
+
+ <!-- <svg class="icon icon-social">
+   <use xlink:href="#facebook"></use>
+ </svg>
+
+ <svg class="icon icon-social">
+   <use xlink:href="#twitter"></use>
+ </svg>
+
+ <svg class="icon icon-social">
+   <use xlink:href="#instagram"></use>
+ </svg> -->
+
+
+ <?php
+
+ // Flower Icon
+ // echo file_get_contents( get_template_directory() .
+ // '/assets/dist/svg/icon-flower.svg' );
+
+
+ // Graph Icon
+ // echo file_get_contents( get_template_directory() .
+ // '/assets/dist/svg/icon-graph.svg' );
+
+
+ ?>
+
+
+
+
+
+
+
+
+
+ <?php get_footer(); ?>

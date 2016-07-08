@@ -79,7 +79,7 @@ gulp.task('browser-sync', function() {
 	];
 
 	browserSync.init(files, {
-		proxy: 'wordcamp16.dev/'
+		proxy: 'wordpress-svg:8888'
 	});
 });
 

@@ -1,6 +1,7 @@
-$icon-color: #fff;
+////////////////////////////////////////////////////////////////////////////////
+// Baseline
+////////////////////////////////////////////////////////////////////////////////
 
-// Baseline SVG styles
 .icon {
   display: inline-block;
   width: 1em;
@@ -10,41 +11,134 @@ $icon-color: #fff;
 
 
 
-// Get specific here
-.icon-navigation {
-  color: $icon-color;
-  font-size: 20px;
-  margin-right: .5em;
 
-  // Change color on hover
-  &:hover {
-    color: complement($icon-color);
-  }
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Social
+////////////////////////////////////////////////////////////////////////////////
+
+.icon-social {
+  font-size: 300px;
+
+  //hover
+
 }
 
+
+
+
+
+
+
+
+
+
+
+// .icon-social {
+//   color: color('white');
+//   font-size: 75px;
+//   transition: all 250ms ease-in-out;
+// }
+//
+// .social-list {
+//   @include reset-list;
+//   display: flex;
+//
+//   li {
+//     background-color: color('black');
+//     margin-right: 2em;
+//     padding: 5em;
+//     border-radius: 50%;
+//
+//     &:hover {
+//       .icon-social {
+//         color: color('pink');
+//       }
+//     }
+//   }
+// }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Flower
+////////////////////////////////////////////////////////////////////////////////
+
+.icon-flower {
+  font-size: 600px;
+}
+
+.petal {
+  color: color('pink');
+}
+
+.flower-center {
+  color: color('blue');
+}
+
+
+
+
+
+
+// .petal {
+//   transform: scale(0);
+//   animation: show-pedals 1s forwards;
+//   transform-origin: 150px 150px;
+//   $delay: 0s;
+//
+//   @for $i from 1 through 6 {
+//     &:nth-child(#{$i}) {
+//       animation-delay: $delay;
+//     }
+//     $delay: $delay + .25;
+//   }
+// }
+//
+// @keyframes show-pedals {
+//   from {
+//     transform: scale(0);
+//   }
+//   to {
+//     transform: scale(1);
+//   }
+// }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Graph
+////////////////////////////////////////////////////////////////////////////////
+
+
+.icon-graph {
+  font-size: 500px;
+
+}
+
+.large-graph {
+
+}
+
+.small-graph {
+  position: relative;
+  // animation: graph-insert 2s forwards;
+}
 
 
 // Graph Animation (using full <svg>)
 @keyframes graph-insert {
   0% {
     opacity: 0;
-    transform: translateX(-.5em) translateY(.5em);
+    transform: translateX(-8px) translateY(8px);
   }
   100% {
     opacity: 1;
-  }
-}
-
-.icon-graph {
-
-  path {
-    position: relative;
-    fill: color('blue');
-
-    &:first-of-type {
-      animation-name: graph-insert;
-      animation-duration: 2s;
-      fill: color('pink');
-    }
   }
 }
